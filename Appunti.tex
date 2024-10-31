@@ -1,0 +1,321 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\pagenumbering{arabic}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{afterpage}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage[font=small,labelfont=bf]{caption}
+%\usepackage[uniquename=false, sorting=none, style=authoryear, maxnames=3, minnames=1]{biblatex}
+
+\usepackage[backend=bibtex, sorting=none]{biblatex}
+    
+    
+
+\usepackage{epigraph}
+\usepackage{pdfpages}
+\usepackage{ragged2e}
+\usepackage[version=3]{mhchem}
+
+\newenvironment{bottompar}{\par\vspace*{\fill}}{\clearpage}
+\renewcommand{\arraystretch}{1.5}
+\pagestyle{fancy}
+\fancyhead[LE]{\slshape}
+\fancyhead[LO]{\slshape }
+\fancyfoot[C]{\thepage}
+\setcounter{secnumdepth}{3}
+
+
+\title{Notes of Dynamics of Stellar System}
+\author{Leonardo Toti}
+\date{\today}  
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Two-Body Problem: summary of the results}
+Starting from two bodies interacting only through gravity.
+Going in the center of mass (CoM) reference frame (rf) and introducing the reduced mass $\mu$, we reduce te problem to a single body fixed in a keplerian potential determined by the total mass $M$.
+
+Since the keplerian potential is spherically symmetric, the force will always be parallel to $\vec{r} \Rightarrow $ the torque is always zero $\Rightarrow \vec{L}$ is conserved both in magnitude and direction. This result reduces the dimensionality of the problem from 3D to 2D, indeed we have only planar orbit.
+
+The total energy, $E$, is a conserved quantity, it can be expressed as a sum of the radial kinetic component and a effective potential $V_{eff}(r,L)$, so the problem is reduced to a 1D problem. 
+
+Possible orbits: 
+
+\begin{itemize}
+    \item $E>0$ : the particle can start from infinity with a negative radial velocity, reach the pericentre and go back to infinity with an hyperbolic orbit, 
+    \item $0<E<V_{min}$ : system constrained between two radii: apocentre and pericentre. Only with Keplerian potential and Harmonic potential the orbits are closed; in this case elliptical orbits,
+    \item $E=V_{min}$ : radial velocity zero, circular orbits,
+    \item $E<V_{min}$ : no bound states.
+\end{itemize}
+	 
+
+The radius is in function of the eccentricity $e$, so the apocentre $r_p = a(1+e)$ and the pericentre $r_a = a(1-e)$: 
+
+\begin{itemize}
+    \item $e<1$ :  elliptical solution,
+    \item $e=1$ :parabolic orbits,
+    \item $e>1$ : hyperbolic orbits, 
+    \item $e=0$ : Circular orbits. 
+\end{itemize}
+
+
+\subsection{Gravitational scattering} 
+unbound case of the two-body problem. It is important the \textit{virial parameter} $P_v$, function of the initial velocity, impact parameter and the central body mass, to determine the strength of the interaction. 
+
+
+\subsection{Slingshot effect}
+$m_2<<m1$ and very strong interaction: $m1$ can acquire an enormous amount of kinetic energy.
+
+
+
+\section{Potential theory}
+\subsection{General results}
+Potentials and mass distributions are additive quantities, so we consider simpler structure and add it together.
+
+The potential is a scalar field and it can be computed using the \textit{Poisson's equation} knowing the density distribution $\rho(r)$.
+
+The gravitational field is conservative. 
+
+
+\subsection{Newton's theorems}
+They are useful for spherically symmetric mass distribution.
+
+\begin{itemize}
+    \item I :  A spherical shell of matter exerts no net gravitational force on bodies within the shell;
+
+    \item II : A spherical shell of matter exerts a force on bodies outside the shell, equal to the force that would be exerted
+if all the mass of the shell were concentrated in a point-mass at its centre.
+ 
+\end{itemize}
+
+
+The gravitational potential inside an empty spherical shell is constant: compute it at the center is easy. 
+Another fundamental consequence, that the gravitational attraction of a spherical mass density distribution $\rho(\vec(r))$ on a unit mass at radius $r$ is entirely determined by the mass interior to $r$.
+
+With this symmetry it's easy to compute the circular speed and the circular frequency, $\\Omega$, whose give me an estimate of the total mass inside a given radius, and the escape velocities. 
+
+\subsection{List of simple mass distribution}
+
+\begin{itemize}
+
+	\item \textbf{Point mass} : keplerian potential,
+	
+	\item \textbf{Homogeneous sphere} : Harmonic potential 
+
+	\item \textbf{Plummer sphere} : used to model globular, stellar clusters and simplified version of DM halos.
+	
+	\small{(Stellar clusters are loosely bound, younger, and found in the disk of galaxies.
+Globular clusters are tightly bound, older, and found in the halo of galaxies.)}
+
+	It is \textbf{Spherical Symmetric}; \textbf{Finite Total Mass}: unlike some other models (like the isothermal sphere);  \textbf{Decreasing Density Profiles} as you move away from the center; the potential is well-behaved at both small and large distances; \textbf{Core-Dominated Structure}: at the center of the Plummer sphere, the density is finite and approaches a constant value, instead at large radii, the density falls off rapidly.
+	
+	\item \textbf{Plummer-Kuzmin axis-symmetric} : It is an extension of the simpler Plummer sphere model, modified to introduce axial symmetry. This model introduces a flattened structure, representing systems with a disk-like shape, such as spiral galaxies. The scale length parameter 
+ $a$ controls the degree of flattening, and the potential behaves more like a disk at larger radii, while it resembles a spherical Plummer potential closer to the center.
+
+It's also important for the rotation curves of disk galaxies and to investigate the orbits of stars where motion is predominantly planar, as in spiral galaxies.
+	
+	\item \textbf{Miyamoto-Nagai disc} : This potential allows for a more flexible and realistic representation of disk galaxies by including both radial and vertical scale parameters. The parameter $b$ explicitly controls the thickness of the disk, giving the Miyamoto-Nagai potential more freedom to adjust the vertical distribution of matter compared to the Plummer-Kuzmin model. The Miyamoto-Nagai model can represent sharper central mass concentrations if the parameters are chosen appropriately. This makes it more flexible for modeling disk galaxies with more realistic central bulges or dense nuclei.
+ 
+ 
+ 
+	\item \textbf{Hernquist distribution} : It describes the DM halo surrounding a galaxy as having a specific density profile that decreases with distance from the center.
+	
+\end{itemize}
+
+
+
+
+\section{Dynamical time}
+
+Time it takes for a test particle to fall from a given radius towards the centre, provided it starts at rest while all other particles are static.
+
+For an homogeneous sphere, $T_{dyn} = T_{orb}/4$, for other potentials the dynamical $T_{dyn} \approx T_{orb} $ or $T_{dyn} \approx T_{cross} $ .
+
+For the entire homogeneous sphere which is collapsing, $T_{collapse} \approx T_{dyn}/2 $.
+
+Process:
+
+\begin{itemize}
+	\item relevant over $T_{dyn}$ : distribution can be considered static,
+	\item secular : long term evolution of the system must be taken into account.
+\end{itemize}
+
+
+
+\section{Orbits}
+
+\subsection{Orbits in spherical potentials}
+WE are assuming equilibrium over dynamical timescale. It's possibile to define the radial and the azimuthal orbital period, if their ratio is a rational number the orbits may close. In the keplerian potential the ratio is 1, for harmonic one 2, they are the only two potentials where all bound orbits close (bertrand's theorem).
+
+The harmonic potential produces elliptical orbits, with the centre that coincides with the centre of the system.
+
+
+
+
+
+\subsection{Orbits in axis-symmetrical potentials}
+Only simple disk, no bars, spiral, etc.
+
+Let $z$ be the symmetrical axis, $\vec{L_z}$ is conserved $\Rightarrow$ orbits are on a plane, \textbf{but} the plane precedes in time around the z-axis, in that plane the orbits do not close: rosetta shape. 
+
+
+\subsubsection{Quasi-Circular Orbits}
+This case can describe the orbits of stars, which belong to the disk. 
+We start from the \textit{guiding radius} $R_G$, the radius of a circular orbits on $xy$ plane, ($z=0$). Then we allow small deviations in $R$ and $z$. We can define the \textit{epicyclical frequency}, $k^2$, and the \textit{vertical frequency}, $\nu^2$; the first one is equal to the second derivative of the effective potential respect to $R$, and the second one respect to $z$, both evaluated at $R=R_G$ and $z=0$.
+
+$k^2$ depends on $\Omega^2$, they are equal in the keplerian case.
+
+
+
+\subsubsection{Bar Galaxies}
+Bar Galaxies show a clear deviation from the axis-symmetrical distribution, typically within a given radius. The bar form from the growth of a perturbation due the passage of a satellite. If stars with different radii had different precession frequencies, the bar would be disintegrated within a few orbital periods. It must be constant. 
+
+\subsubsection{Toomre Instability Criterion}
+An application of epicyclical frequencies and ordbits in axis-symmetrical potential, that explains why there is star formation in already formed galaxies.
+
+To form a star we need a gas region to become gravitationally unstable and thus collapse due its self-gravity.
+ 
+Assumption: 
+
+\begin{itemize}
+	\item $\Omega$ od the disk gas do \textbf{not} depend on the radius,
+	\item only gas, 
+	\item contraction or expansion are always isothermal,
+	\item angular momentum conservation, shrinks without additional torque.
+\end{itemize}
+
+At the equilibrium, the gravitational force is equal to the sum of the pressure and centrifugal forces. Considering a small shrinks of the gas patch, we have a modification in these forces. The equilibrium is restored if the \textit{Toomre stability parameter} $Q$, is  $Q \geqslant 2/3$ (more formally $\geqslant 1)$. It depends via $k$ on the global properties of the potential, via $c_s$ on the degree of turbulence of the system, via $\Sigma$ on the local properties of the potential.
+
+
+
+
+\section{Collisionless Boltzmann Equation}
+
+The focus of this section is the derivation of the phase-space distribution (positions and velocities) that an N-body system must have to be at equilibrium within its own gravitational potential. To do this, we introduce the \textit{ Collisionless Boltzmann equation (CBE) (Vlasow-Poisson equation)} which determines the evolution of N bodies moving within a smooth potential.
+
+Let us define the distribution function $f(\vec{r}, \vec{v}, t)$, the probability density of finding a particle at a given time $t$, at a given position $\vec{r}$, with a given velocity $\vec{v}$: $f(\vec{r}, \vec{v}, t) \geqslant 0$.
+
+If the system is stationary, $\partial_t f$ = 0. We also assume that the number of particle is conserved and no violent interactions are present. It's possible to derive the tensor virial theorem. 
+
+
+
+
+\section{Polytropic models: Plummer sphere}
+
+Every integral of motion is a stationary solution of the CBE and vice versa (Jeans' theorem). We want to consider a distribution function $f$ spatial spherical symmetry and isotropic velocities. The Lynden-Bell theorem states that $f$ can always be written as a combination of just two integral of motion: energy and angular momentum. We will focus on $f(E)$, and considering only bound particle.
+
+We are searching for polytropic solutions, a specific case where the pressure is a power law of the density, $ P \propto \rho^\gamma$. Recalling the Poisson's equation we arrive at the Lane-Emden Equation (LEE). Using also the hydrostatic equilibrium (HE), one can show the equivalence between our polytropic stellar system at equilibrium and a polytropic gas at hydrostatic equilibrium.
+
+A solution (not the only one) for polytropic gases has been found by Schuster. Reobtaining the Plummer sphere with $f \propto \epsilon^{7/2}$ with $\epsilon$ = relative energy per unit mass.
+
+
+
+
+\section{Thermodynamic equilibrium: Single isothermal sphere}
+
+Sending $n \longrightarrow \infty $, (n = "degree of freedom in $\gamma$ "), LLE is not well defined but following the between self-gravitating non-collisional systems and polytropic gases, $P \propto \rho$. We have obtained the \textbf{Singular Isothermal Sphere}. The density will be fucntion of the dispersion velocity $\sigma^2$. The system is unphysical, since the density diverges at the center and the mass diverges fro increasing radii. The circular velocity is constant.
+
+This case can be used to describe the core of some systems.
+
+Self-gravitating systems allowed to thermalise tend to create dense core regions and lose
+their outskirts. The action of gravity transformed our universe from a more homogeneous one to a plethora of substructures: galaxies, molecular clouds, clusters, planetary systems... These processes, however, cannot be too efficient.
+
+
+\section{Relaxation process}
+
+The distribution function $f$ was defined as the probability distribution that determines the phase-space state of a composite system, it governs the probability of finding an element of the distribution at a given position with a given velocity. In collisionless dynamics, the $f$ follows the CBE.
+
+Self-gravitating systems do not maximise entropy if they are allowed to transfer
+small quantities of energy from the centre to the outer parts. However, from the definition of the entropy $S$ through $f$, if $f$ satisfied the CBE and did not evolve in time, then $S$ would not evolve either.
+Apparent inconsistency $\Rightarrow$ the two distribution functions we are using are not exactly the same.
+
+In the entropy definition, we should use the “coarse-grained” distribution function $f$: a kind of $f$ averaged on a phase-space sufficiently large not to notice the microstates the populate the distribution, but to describe only its macroscopic properties. 
+
+We are looking for processes that increase the entropy in time when computed using a coarse-grained distribution function, this macroscopic distribution functions over large enough volumes. “Large enough” volumes are not well defined, uniquely defined.
+
+Causes for relaxation processes: 
+
+\begin{itemize}
+	\item \textbf{Phase Diffusion} : Consider a very massive object in the centre of the distribution, and a large number of much smaller particles. The potential is dominated by that of the massive particle. As initial condition, the small particles start from
+the same phase, and there is a gradient in angular velocity. Evolving in time the system, the particles form a spiral, ever tighter, until it basically covers homogeneously the whole circle. Taking the average, coarse-grained distribution function, at this later time results in a distribution that covers a much larger phase-space volume.
+
+This process can increase the $f_{CG}$ phase-space volume in time even if the interaction between the particles is irrelevant, and the potential is static.
+
+	\item \textbf{Violent Relaxation} : Like the collapsing homogeneous sphere, where the remnant had a dense core and an expanding envelope. Here, the process that transfers the energy between particles is mediated by the global potential generated by the distribution, which changes over time; to have an efficient energy transfer, the potential must vary on dynamical timescale.
+	
+	\item \textbf{Two-Body Relaxation} : Consider a cubic volume, filled with molecules in a tiny fraction of it, with a very peaked velocity distribution in a small velocity range, and almost zero everywhere else. The system evolves, and if the particles do not
+interact, the space density will become homogeneous in the whole volume, but the velocity distribution will be unchanged. If the particles however are interacting, we know from classical statistical mechanics that also the velocity distribution expands towards a Maxwellian (to maximise entropy while conserving energy and mass), non-zero over a much larger range of velocities. 
+	
+\end{itemize}
+
+\subsection{Two-body relaxation}
+
+There is no such thing as thermodynamical equilibrium for self-gravitating systems, because they can always evolve to higher entropy states with denser cores. The limitation to this can be that at some densities, binary formation can become very efficient, and binaries act as a heating source, interacting strongly with other stars, even scattering stars out of the core.
+
+We relax one of the restricting assumptions we have made so far, that the stars or DM particles composing our N-body system move in a perfectly smooth potential. Over time, the cumulative effect of the scatterings due to the inhomogeneity of the system builds up enough to affect the smooth dynamics of the particles.
+
+Consider a single particle moving through a homogeneous system made of the other particles at rest. We consider the particles at rest because the system is isotropic, the particles should have random motions that average to zero, so the difference between the cases can be neglected. Let us change reference frame to that of the moving star, that experiences a coherent motion of all other stars towards it.
+This is equivalent to saying: the stars have isotropic velocities, and we focus on one of these. In the reference frame of the selected star, there is an average motion of the other stars towards it, but the field stars have different velocities in direction and magnitude. We take all stars with specific direction and velocity magnitude and integrate over all this distribution; doing so should be equivalent to considering all other stars at rest.
+
+Let us now consider a single encounter, between the subject star at rest, and the field star moving towards it with velocity $\vec{v}$ , impact parameter $\vec{b}$ , distance $\vec{r}$. We assume the perturbating acceleration due to the encounter is small compared to the smooth potential.
+
+The gravitational force exerted by the field star on the subject star has a component parallel to the initial velocity and one perpendicular to it; this weak force integrated over the whole orbit of the subject star will have an impact on the velocity of the subject star in the CMRF of the galaxy.
+
+Each field star with positive impact parameter will thus drag the subject star a bit upwards towards it, those with negative impact parameter will drag it downwards. Due to the isotropy, on average, these accelerations at the first order cancel out; we must look at the second order to obtain the “random walk” in velocity space, and add up the contributions of all encounters with field stars.
+
+We need to find $N_{int}$ , the number of encounters in every full orbit of the subject between the subject and the field stars with impact parameter $ \in (b, b + db)$. $ln\Lambda$ is the Coulomb logarithm. The exact values of $b_{min}$ and $b_{max}$ are rather arbitrary. For example, $b_{max}$ is something of the order of the scale radius of the host galaxy, as there are no field stars with impact parameter greater than that. To estimate $b_{min}$ we re-derive the Coulomb logarithm from the 2-body problem formula, without making any
+assumptions on it.
+
+Moving forward, we want to estimate when this mean velocity square change is comparable to the initial velocity of the subject star (or the average velocity of the distribution). 
+
+In conclusion, if the system is composed of a large number of stars, the average star will be able to make a large number of orbits before the perturbation becomes relevant.
+Galaxies are not relevantly modified by 2-body relaxation, globular clusters can be relevantly modified by 2-body relaxation and galaxy clusters too tend to get relaxed.
+
+
+
+\subsection{Dynamical Friction}
+
+Assuming that the subject for which we compute the velocity change is much more massive than the field stars, but much less massive than the total mass of the host star field, we obtain a process with very different consequences: \textbf{dynamical friction}. In this case, these massive objects travel towards the centre of the host, transferring their kinetical energy and angular momentum to the field stars.
+
+Dynamical friction is the cause of many observable properties of stellar systems: the migration of globular clusters andmassive black holes towards the centre of galaxies, galaxy mergers... For example, observing our galaxy, we can see that the distribution of globular clusters drops in the central regions: dynamical friction drags them to the very centre, where they are disrupted by the much stronger tidal forces.
+
+Assuming: 
+
+\begin{itemize}
+	\item spherical host,
+	\item isotropic host,
+	\item homogeneous host $\rho(\not{r})$,
+	\item massive object and supermassive host $m \ll M \ll Nm$,
+	\item distribution function $f=f(\epsilon)$.
+\end{itemize}
+
+Let us change reference frame to that comoving with the perturber. As long as the interactions are weak, the encounters are hyperbolic Keplerian encounters; as the perturber is much more massive than the field stars, these are scattered changing only the direction of their speed, not the magnitude. To the first order, under the assumption of local homogeneity, the velocity change in the direction perpendicular to the relative motion cancels out for positive and negative impact parameters.
+Along the direction parallel to the relative motion however, the velocity of the field stars always decreases, both for negative and positive impact parameters. These decelerations all add up (integrating on all impact parameters), and for the conservation of linear momentum, the perturber gains some momentum on this direction.
+Going back to the reference frame of the host, the perturber has lost some of its initial linear momentum, and also some angular momentum.
+
+we can notice that the deceleration of $M$ is proportional to $M$. Usually, due to the equivalence principle (the inertial and gravitational mass are equivalent) the gravitational field (the gravitational acceleration) exerted on a subject by another object does not depend on the mass of the subject. This is why dynamical friction is so important in galaxy mergers and the evolution of galaxy mergers and globular clusters, and so irrelevant in the evolution of single stars.
+
+After some calculations, the dynamical friction deceleration of the perturber, in magnitude, is proportional to the inverse square of its velocity and it is completely determined by the distribution function of the host system.
+
+\end{document}
+        
